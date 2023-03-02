@@ -1,52 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-body {
-    font-family: "Poppins";
-    min-height: 100vh;
-    background: linear-gradient(to right, #333399, #ff00cc);
+@mixin background-squares($rot) {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    z-index: -1;
+    position: absolute;
+    border-radius: 10px;
+    transform: rotate($rot);
+    -webkit-transform: rotate($rot);
+    background:rgba(255, 255, 255, .15);   
+}
+
+body { 
     display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
+    min-height: 100vh;
+    position: relative;
+    align-items: center;
+    font-family: "Poppins";
+    justify-content: center;
+    background: linear-gradient(to right, #333399, #ff00cc);
 }
 
 .login-card {
     width: 450px;
-    background: rgba(255, 255, 255, .5);
     padding: 4rem;
-    border-radius: 10px;
+    margin: 0rem 1rem;
     position: relative;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .5);
 
-    &::before {
-        content: "";
-        position: absolute;
-        background:rgba(255, 255, 255, .15);
-        inset: 0;
-        transform: rotate(-5deg);
-        z-index: -1;
-    }
+    &::before {@include background-squares(-5deg);}
+
+    &::after {@include background-squares(5deg);   }
 
     @media (max-width: 576px) {
         width: 300px;
-        padding: 2rem;
+        padding: 2rem;     
     }
 
-    @media (max-width: 370px) {
-        width: 220px;
-    }
+    @media (max-width: 370px) {width: 220px;}
+
+    @media (max-width: 290px) {width: 150px;}
 }
 
 .login-card-logo {
     text-align: center;
 
-    & img {
-        width: 60px;
-    }
+    & img {width: 60px;}
 }
 
 .login-card-header {
-    margin-bottom: 2rem;
     text-align: center;
+    margin-bottom: 2rem;
 
     & h1 {
         font-size: 2rem;
@@ -62,9 +71,9 @@ body {
 }
 
 .login-card-form {
+    gap: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
 }
 
 .login-card-form .form-item {
@@ -72,46 +81,41 @@ body {
 }
 
 .login-card-form .form-item .form-item-icon {
-    position: absolute;
+    opacity: .4;
     top: .82rem;
     left: 1.4rem;
     font-size: 1.3rem;
-    opacity: .4;
+    position: absolute;
 }
 
 .login-card-input {
+    width: 370px;
     border: none;
     outline: none;
-    background: rgba(255, 255, 255, .3);
     padding: 1rem 1.5rem;
-    padding-left: calc(1rem * 3.5);
     border-radius: 100px;
-    width: 370px;
     transition: background .5s; 
+    padding-left: calc(1rem * 3.5);
+    background: rgba(255, 255, 255, .3);
     
-    &:focus {
-        background: white;
-    }
+    &:focus {background: white;}
 
-    @media (max-width: 576px) {
-        width: 220px;
-    }
+    @media (max-width: 576px) {width: 220px;}
 
-    @media (max-width: 370px) {
-        width: 140px;
-    }
+    @media (max-width: 370px) {width: 140px;}
+
+    @media (max-width: 290px) {width: 70px;}
     
 }
 
 .login-card-button {
-    background: black;
-    color: white;
+    outline: none;
     padding: 1rem;
+    color: white;
+    background: black;
+    letter-spacing: 2px;
     border-radius: 100px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    outline: none;
-
     transition: background .5s;
     
     &:hover {
@@ -123,14 +127,13 @@ body {
 
 
 .login-card-footer {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
     gap: 1.5rem;
-    text-align: center;
-    margin-top: 3rem;
     opacity: .8;
-    text-transform: uppercase;
+    display: flex;
+    margin-top: 3rem;
+    text-align: center;  
     letter-spacing: 1px;
+    flex-direction: column;
+    text-transform: uppercase;
     font-size: calc(1rem * .8);
 }
