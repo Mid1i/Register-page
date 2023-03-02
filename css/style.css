@@ -47,7 +47,7 @@ body {
 @media (max-width: 576px) {
   .login-card {
     width: 300px;
-    padding: 2rem;
+    padding: 1rem;
   }
 }
 @media (max-width: 370px) {
