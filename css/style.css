@@ -8,11 +8,6 @@ body {
   justify-content: center;
   overflow: hidden;
 }
-@media (max-width: 576px) {
-  body {
-    padding: 2rem 0;
-  }
-}
 
 .login-card {
   width: 450px;
