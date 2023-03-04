@@ -10,6 +10,7 @@
     position: absolute;
     border-radius: 10px;
     transform: rotate($rot);
+    -webkit-transform: rotate($rot);
     background:rgba(255, 255, 255, .15);   
 }
 
@@ -27,7 +28,6 @@ body {
 .login-card {
     width: 450px;
     padding: 4rem;
-    margin: 0rem 1rem;
     position: relative;
     border-radius: 10px;
     background: rgba(255, 255, 255, .5);
@@ -43,7 +43,7 @@ body {
 
     @media (max-width: 370px) {width: 220px;}
 
-    @media (max-width: 290px) {width: 150px;}
+    @media (max-width: 290px) {width: 170px;}
 }
 
 .login-card-logo {
@@ -103,7 +103,7 @@ body {
 
     @media (max-width: 370px) {width: 140px;}
 
-    @media (max-width: 290px) {width: 70px;}
+    @media (max-width: 290px) {width: 94px;}
     
 }
 
@@ -121,8 +121,9 @@ body {
         background-color: rgba(0, 0, 0, .85);
         cursor: pointer;
     }
-}
 
+    @media (max-width: 290px) {width: 173px;}
+}
 
 
 .login-card-footer {
@@ -135,4 +136,14 @@ body {
     flex-direction: column;
     text-transform: uppercase;
     font-size: calc(1rem * .8);
+
+    @media (max-width: 576px) {
+        margin-top: 1rem;
+        gap: .5rem; 
+    }
+
+    @media (max-width: 290px) {
+        margin: .5rem;
+        gap: .2rem;
+    }
 }
