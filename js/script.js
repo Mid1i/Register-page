@@ -1,6 +1,6 @@
 let tg = window.Telegram.WebApp;
 tg.expand();
 
-document.addEventListener(function(event) {
+$('.body').addEventListener('click', function(event) {
     $(".login-card-input").blur();
 }); 
